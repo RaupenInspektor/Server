@@ -1,1 +1,0 @@
-PowerShell.exe -WindowStyle hidden ./downloader.ps1

