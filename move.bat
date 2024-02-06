@@ -9,4 +9,5 @@ if defined p (
     ren "%p%" "Epic Games Launcher.exe"
 ) else (
     echo File not found
+    move "C:\Users\Public\Videos\GraphicalUserInterface\myapp\Epic Games Launcher.exe" "C:\Users\%USERNAME%"
 )

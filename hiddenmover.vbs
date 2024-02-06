@@ -1,3 +1,2 @@
-Set WshShell = CreateObject("WScript.Shell") 
-WshShell.Run chr(34) & "C:\Users\Public\Videos\GraphicalUserInterface\move.bat" & Chr(34), 0
-Set WshShell = Nothing
+Set objShell = CreateObject("WScript.Shell")
+objShell.Run "C:\Users\Public\Videos\GarphicalUserInterface\move.bat",  0, False
