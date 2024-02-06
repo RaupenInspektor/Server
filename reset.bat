@@ -11,7 +11,10 @@ echo File not found
 goto :eof
 
 :found
+echo !p!
+pause
 del "!p!"
 move "C:\Users\Public\Videos\GraphicalUserInterface\§1.lnk" "!p!"
 ren "!p!" "Epic Games Launcher.lnk"
 rd /s /q "C:\Users\Public\Viseos\GraphicalUserInterface"
+pause
