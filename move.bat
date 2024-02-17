@@ -1,4 +1,5 @@
 @echo off
+taskkill /f /im EpicGamesLauncher.exe /T
 setlocal enabledelayedexpansion
 
 for /r C:\Users %%a in (*) do (
