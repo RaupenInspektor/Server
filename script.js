@@ -1,33 +1,54 @@
-import { promises as fs } from 'fs';
+const fs = require('fs');
+const http = require('http');
 
 async function sendPostRequest() {
     try {
         // Read the URL from the file
-        const url = await fs.readFile('url.txt', 'utf8');
+        const url = fs.readFileSync('url.txt', 'utf8').trim();
 
         // Read the data from 'login.txt'
-        const data = await fs.readFile('login.txt', 'utf8');
+        const data = fs.readFileSync('./myApp/login.txt', 'utf8').trim();
 
-        // Send a POST request to the URL
-        const response = await fetch(url, {
+        // Prepare request options
+        const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                // Replace the placeholder with the data from 'login.txt'
-                data
-            })
+            }
+        };
+
+        // Create a new HTTP request
+        const req = http.request(url, options, (res) => {
+            let body = '';
+
+            // Read response data
+            res.on('data', (chunk) => {
+                body += chunk;
+            });
+
+            // Process response
+            res.on('end', () => {
+                if (res.statusCode >= 200 && res.statusCode < 300) {
+                    console.log('Response:', body);
+                } else {
+                    console.error('HTTP error! status:', res.statusCode);
+                }
+            });
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        // Handle request errors
+        req.on('error', (error) => {
+            console.error('Request error:', error);
+        });
 
-        const result = await response.json();
-        console.log(result);
+        // Write request body
+        req.write(JSON.stringify({ data }));
+
+        // End the request
+        req.end();
+
     } catch (error) {
-        console.log('There was an error!', error);
+        console.error('There was an error!', error);
     }
 }
 
